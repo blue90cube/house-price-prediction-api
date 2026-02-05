@@ -1,5 +1,5 @@
 # House Price Prediction API - Dockerfile
-# Use Python 3.11 slim image for smaller size
+# Build version: 2 (forces cache bust)
 FROM python:3.11-slim
 
 # Set working directory

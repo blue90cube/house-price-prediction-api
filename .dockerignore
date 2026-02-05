@@ -1,0 +1,52 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv/
+ENV/
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Data files (not needed for deployment)
+*.xlsx
+*.csv
+*.docx
+
+# Notebooks and docs
+notebooks/
+*.ipynb
+PRESENTATION.md
+README.md
+ProblemStatement.txt
+
+# Tests (not needed in production)
+tests/
+pytest.ini
+.pytest_cache/
+
+# Logs
+logs/
+*.log
+
+# Other deployment configs
+render.yaml
+railway.json
+vercel.json
+.vercelignore
+api/
+
+# Build artifacts
+catboost_info/
+.coverage
+htmlcov/

@@ -1,6 +1,9 @@
 # House Price Prediction API - Dockerfile
-# Build version: 2 (forces cache bust)
+# Build version: 3 - scikit-learn fix
 FROM python:3.11-slim
+
+# Cache bust: v3
+ARG CACHEBUST=3
 
 # Set working directory
 WORKDIR /app
@@ -17,10 +20,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
+# Force cache invalidation for requirements
+RUN echo "Cache bust: v3 - $(date)"
+
 # Copy requirements first for better caching
 COPY requirements.txt .
 
-# Install Python dependencies
+# Install Python dependencies (scikit-learn>=1.5.0 required)
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code

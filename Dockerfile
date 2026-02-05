@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Force cache invalidation for requirements
-RUN echo "Cache bust: v3 - $(date)"
+RUN echo "Cache bust: v4 - scikit-learn 1.7.0 fix"
 
 # Copy requirements first for better caching
 COPY requirements.txt .

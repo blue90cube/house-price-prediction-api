@@ -37,4 +37,4 @@ USER appuser
 EXPOSE $PORT
 
 # Start the application (Railway provides $PORT env variable)
-CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]

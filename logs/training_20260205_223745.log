@@ -1,0 +1,39 @@
+2026-02-05 22:37:45,344 | INFO | ============================================================
+2026-02-05 22:37:45,346 | INFO | HOUSE PRICE PREDICTION - FINAL TRAINING
+2026-02-05 22:37:45,346 | INFO | ============================================================
+2026-02-05 22:37:45,346 | INFO | Loading data from C:\Users\Abhijit\OneDrive - iitkgp.ac.in\Desktop\House_Pricwe\Case Study 1 Data.xlsx
+2026-02-05 22:38:55,459 | INFO | Loaded 247,172 records, 10 columns
+2026-02-05 22:38:55,459 | INFO | Removing outliers (1st-99th percentile)...
+2026-02-05 22:38:55,632 | INFO | Removed 14,897 outliers, remaining: 232,275
+2026-02-05 22:38:55,639 | INFO | Imputing missing values...
+2026-02-05 22:38:55,907 | INFO | Missing values after imputation: 0
+2026-02-05 22:38:55,908 | INFO | Engineering features...
+2026-02-05 22:38:56,252 | INFO | Total features after engineering: 31
+2026-02-05 22:38:56,393 | INFO | Features: 25 numerical, 3 categorical
+2026-02-05 22:38:56,582 | INFO | Train: 185,820 | Test: 46,455
+2026-02-05 22:38:56,582 | INFO | 
+============================================================
+2026-02-05 22:38:56,582 | INFO | TRAINING MODELS
+2026-02-05 22:38:56,582 | INFO | ============================================================
+2026-02-05 22:38:56,582 | INFO | Training LightGBM...
+2026-02-05 22:53:11,257 | INFO | LightGBM CV - R2: 0.9816, MAE: $19,018, MAPE: 4.84%
+2026-02-05 22:55:13,595 | INFO | Training XGBoost...
+2026-02-05 22:57:02,924 | INFO | XGBoost CV - R2: 0.9797, MAE: $20,089, MAPE: 5.11%
+2026-02-05 22:57:49,718 | INFO | 
+============================================================
+2026-02-05 22:57:49,718 | INFO | TEST SET EVALUATION - LightGBM
+2026-02-05 22:57:49,718 | INFO | ============================================================
+2026-02-05 22:57:50,437 | INFO | R2:   0.9816
+2026-02-05 22:57:50,437 | INFO | MAE:  $18,983.38
+2026-02-05 22:57:50,437 | INFO | RMSE: $28,430.03
+2026-02-05 22:57:50,437 | INFO | MAPE: 4.83%
+2026-02-05 22:57:50,719 | INFO | 
+Model saved: C:\Users\Abhijit\OneDrive - iitkgp.ac.in\Desktop\House_Pricwe\artifacts\model.joblib
+2026-02-05 22:57:50,719 | INFO | 
+============================================================
+2026-02-05 22:57:50,719 | INFO | TRAINING COMPLETE
+2026-02-05 22:57:50,719 | INFO | ============================================================
+2026-02-05 22:57:50,719 | INFO | Best Model: LightGBM
+2026-02-05 22:57:50,719 | INFO | Test R2: 0.9816
+2026-02-05 22:57:50,719 | INFO | Test MAE: $18,983.38
+2026-02-05 22:57:50,719 | INFO | Log file: C:\Users\Abhijit\OneDrive - iitkgp.ac.in\Desktop\House_Pricwe\logs\training_20260205_223745.log

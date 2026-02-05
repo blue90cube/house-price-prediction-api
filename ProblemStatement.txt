@@ -1,0 +1,32 @@
+Case Study: Predicting House Prices Using Real Estate Data
+
+Objective:
+Develop a machine learning model to predict house prices based on various features of real
+estate properties. The model should be accurate and ready for deployment in a basic
+production environment.
+
+Dataset:
+You are provided with a simplified dataset containing information about real estate
+properties. The dataset includes the following features:
+ Property ID: Unique ID of the property
+ Location: The geographical location of the property (e.g., city, neighborhood)
+ Size: The size of the property in square feet
+ Bedrooms: Total number of bedrooms
+ Bathrooms: Total number of bathrooms
+ Year Built: The year the property was constructed
+ Condition: How good the condition of property was when it was sold
+ Type: Property type, indicating type of home
+ Date Sold: Date on which actual sale happened
+ Price: The sale price of the property (target variable)
+
+Tasks
+ Understand this data and make it ready for modelling
+ Modeling – Build a ML model of your choice and try and get to the best model that
+you can
+ Deploy the model and create an API to use the model for any new property
+ Create the code in such a way that it allows for multi core processing
+
+Submission
+ Scripts used to do the analysis
+ API link
+ Presentation summarizing your EDA, approach and results

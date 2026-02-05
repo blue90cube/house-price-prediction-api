@@ -162,40 +162,43 @@ House_Pricwe/
 ├── tests/
 │   └── test_api.py          # API tests
 ├── requirements.txt
+├── api/
+│   └── index.py           # Vercel entry point
 ├── Dockerfile
 ├── render.yaml
+├── vercel.json            # Vercel config
 └── README.md
 ```
 
-## Deployment on Render
+## Deployment
 
-### Option 1: Using render.yaml (Recommended)
+### Option 1: Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and import your repository
+3. Vercel will auto-detect `vercel.json` and deploy
+4. Your API will be live at `https://your-project.vercel.app`
+
+**Endpoints after deployment:**
+- Docs: `https://your-project.vercel.app/docs`
+- Health: `https://your-project.vercel.app/health`
+- Predict: `POST https://your-project.vercel.app/api/v1/predict`
+
+### Option 2: Render
 
 1. Push your code to GitHub
 2. Connect your repository to Render
 3. Render will automatically detect `render.yaml` and deploy
 
-### Option 2: Manual Setup
+**Keep-Alive CRON (Render Free Tier only):**
+Render's free tier spins down after 15 minutes. Use [cron-job.org](https://cron-job.org) to ping `/health` every 14 minutes.
 
-1. Create a new Web Service on Render
-2. Connect your GitHub repository
-3. Configure:
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-   - **Health Check Path**: `/health`
+### Option 3: Docker
 
-### Keep-Alive CRON (Free Tier)
-
-Render's free tier spins down after 15 minutes of inactivity. To keep the server awake:
-
-1. Go to [cron-job.org](https://cron-job.org) (free)
-2. Create an account
-3. Add a new cron job:
-   - **URL**: `https://your-app.onrender.com/health`
-   - **Execution schedule**: Every 14 minutes
-   - **Method**: GET
-
-Alternative: Use [UptimeRobot](https://uptimerobot.com) with a 5-minute check interval.
+```bash
+docker build -t house-price-api .
+docker run -p 8000:8000 house-price-api
+```
 
 ## Development
 
